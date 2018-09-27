@@ -99,7 +99,7 @@ searchBtn.on("click", function(){
     else {
     var tableData = data;
     var clearTD = d3.selectAll("td").remove();
-    var tableData = tableData.filter(data => (data.datetime === dateValue.property("value"))&& (data.state === stateValue.property("value").toLowerCase()));
+    var tableData = tableData.filter(data => (data.datetime === dateValue.property("value")) && (data.state === stateValue.property("value").toLowerCase()));
 
     tableData.forEach(function(ufos){
     var row = tbody.append("tr");
@@ -113,9 +113,9 @@ searchBtn.on("click", function(){
 clearBtn.on("click", function(){
 d3.event.preventDefault();
 var clearTD = d3.selectAll("td").remove();
-document.getElementById('datetime').value = '' 
-document.getElementById('city').value = ''
-document.getElementById('state').value = ''
+d3.select("#datetime").node().value = "" ;
+d3.select("#city").node().value = "" ;
+d3.select("#state").node().value = "" ;
 });
 
 showBtn.on("click", function(){
@@ -125,10 +125,10 @@ tableData.forEach(function(ufos){
 var row = tbody.append("tr");
 Object.entries(ufos).forEach(function([key, value]) {
 var cell = tbody.append("td");
-cell.text(value)
-document.getElementById('datetime').value = '' 
-document.getElementById('city').value = ''
-document.getElementById('state').value = ''
+cell.text(value);
+d3.select("#datetime").node().value = "" ;
+d3.select("#city").node().value = "" ;
+d3.select("#state").node().value = "" ;
 });
 });
 });
