@@ -1,4 +1,5 @@
 var tableData = data;
+
 var tbody = d3.select("tbody");
 var dateValue = d3.select("#datetime");
 var cityValue = d3.select("#city");
@@ -14,7 +15,6 @@ searchBtn.on("click", function(){
     if (dateValue.property("value") === "" && cityValue.property("value") != "" && stateValue.property("value") != "") {
     var tableData = data;
     var clearTD = d3.selectAll("td").remove();
-
     var tableData = tableData.filter(data => ((data.city === cityValue.property("value").toLowerCase()) && (data.state === stateValue.property("value").toLowerCase())));
 
     tableData.forEach(function(ufos){
